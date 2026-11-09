@@ -1,0 +1,40 @@
+{
+  "name": "almashlab-ekish-darslik",
+  "productName": "Almashlab ekish darsligi",
+  "version": "1.0.0",
+  "description": "Almashlab ekishning agroekologik asoslari - elektron darslik",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "uz.darslik.almashlab",
+    "productName": "Almashlab ekish darsligi",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "pdfs",
+        "to": "pdfs"
+      }
+    ],
+    "win": {
+      "target": "portable",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "Almashlab-ekish-darsligi.exe"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "pdfjs-dist": "^3.11.174"
+  }
+}

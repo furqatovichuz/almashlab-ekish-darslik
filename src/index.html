@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; worker-src 'self' blob:; script-src 'self'">
+<title>Almashlab ekish darsligi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="home" class="view active">
+  <svg class="leaves" viewBox="0 0 800 800" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <path d="M100 760 C 90 560, 180 420, 330 330"/>
+      <path d="M118 650 C 190 640, 250 590, 280 520 C 200 520, 140 560, 118 650Z"/>
+      <path d="M104 560 C 30 540, -10 480, 0 410 C 80 420, 120 480, 104 560Z"/>
+      <path d="M150 470 C 230 470, 290 420, 310 350 C 230 350, 170 390, 150 470Z"/>
+      <path d="M690 780 C 700 620, 640 500, 520 420"/>
+      <path d="M680 680 C 610 670, 560 620, 540 560 C 620 560, 670 600, 680 680Z"/>
+      <path d="M690 590 C 760 570, 800 520, 800 460 C 720 470, 680 520, 690 590Z"/>
+      <path d="M640 500 C 570 500, 530 450, 520 400 C 590 400, 630 440, 640 500Z"/>
+    </g>
+  </svg>
+  <div class="home-card">
+    <div class="badge">Elektron darslik</div>
+    <h1>Almashlab ekishning<br><em>agroekologik asoslari</em></h1>
+    <p class="lead">Ma’ruzalar, amaliy mashg’ulotlar, test savollari va glossariy — barchasi bir joyda.</p>
+    <button id="enter" class="btn-primary">Kirish <span aria-hidden="true">→</span></button>
+    <div class="stats">
+      <div><b>7</b><span>ma’ruza</span></div>
+      <div><b>11</b><span>amaliy mashg’ulot</span></div>
+      <div><b>180</b><span>bet</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="toc" class="view">
+  <header class="toc-head">
+    <button id="toc-back" class="btn-ghost">← Bosh sahifa</button>
+    <h2>Mundarija</h2>
+    <input id="search" type="search" placeholder="Mavzuni qidirish…" autocomplete="off">
+  </header>
+  <div id="toc-list" class="toc-scroll"></div>
+</section>
+
+<section id="reader" class="view">
+  <header class="bar">
+    <button id="r-back" class="btn-ghost" title="Mundarijaga qaytish (Esc)">← Mundarija</button>
+    <div id="r-title" class="r-title"></div>
+    <div class="tools">
+      <button id="prev-topic" class="icon" title="Oldingi mavzu">‹</button>
+      <button id="next-topic" class="icon" title="Keyingi mavzu">›</button>
+      <span class="sep"></span>
+      <button id="zoom-out" class="icon" title="Kichraytirish (−)">−</button>
+      <span id="zoom-label" class="zoom-label">100%</span>
+      <button id="zoom-in" class="icon" title="Kattalashtirish (+)">+</button>
+      <button id="fit" class="btn-small" title="Kenglikka moslash (0)">Moslash</button>
+      <span class="sep"></span>
+      <span id="page-label" class="page-label">–</span>
+    </div>
+  </header>
+  <div id="stage" class="stage"><div id="pages" class="pages"></div></div>
+  <div id="loading" class="loading hidden">Yuklanmoqda…</div>
+  <div class="hint">Sichqoncha bilan sudrab siljiting · Ctrl + g‘ildirak — zoom</div>
+</section>
+
+<script src="lib/pdf.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
